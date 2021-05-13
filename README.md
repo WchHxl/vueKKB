@@ -1,6 +1,6 @@
 # my-styule1
 
-> A Vue.js project
+> KKB Vue小实现
 
 ## Build Setup
 
