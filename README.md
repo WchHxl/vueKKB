@@ -3,7 +3,11 @@
 > KKB Vue小实现
 
 ## Build Setup
-
+```
+vue-router hash模式 ------ kvue-router
+Vuex --------kvuex
+Vue --------Kvue
+```
 ``` bash
 # install dependencies
 npm install
