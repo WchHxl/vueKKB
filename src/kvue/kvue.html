@@ -1,0 +1,51 @@
+<!--
+ * @Author: wch
+ * @Date: 2021-05-13 16:14:09
+ * @LastEditTime: 2021-05-13 23:05:00
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: \react-demof:\JavaScript-Charles\开课吧30期全栈\第一课vue-router&vuex\my-styule1\src\kvue\kvue.html
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button @click='handleClick'>点击</button>
+    <p>{{counter}}</p>
+    <p k-text="counter"></p>
+    <p k-html="info"></p>
+    <input k-model='info' />
+    <p>{{arr}}</p>
+  </div>
+  <script src="./kvue.js"></script>
+  <script>
+    const app = new KVue({
+      el: '#app',
+      data: {
+        counter: 1,
+        arr: [1,2,3],
+        info: `<span style='color: red'>加油</span>`
+      },
+      methods: {
+        handleClick() {
+          app.counter++
+        }
+      }
+    })
+    // setInterval(() => {
+    //   app.counter++
+    //   app.arr.push('1')
+    // }, 1000);
+  </script>
+</body>
+
+</html>

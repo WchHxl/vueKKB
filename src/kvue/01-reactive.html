@@ -1,0 +1,55 @@
+<!--
+ * @Author: wch
+ * @Date: 2021-05-11 23:05:18
+ * @LastEditTime: 2021-05-11 23:09:12
+ * @LastEditors: your name
+ * @Description: 
+ * @FilePath: \react-demof:\JavaScript-Charles\开课吧30期全栈\第一课vue-router&vuex\my-styule1\src\kvue\01-reactive.html
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视图更新</title>
+</head>
+
+<body>
+  <div id='app'></div>
+  <script>
+    // 给一个obj定义一个响应式属性
+    function defineReactive(obj, key, val) {
+      Object.defineProperty(obj, key, {
+        get() {
+          console.log('get', val)
+          return val;
+        },
+        set(newVal) {
+          if (newVal !== val) {
+            console.log('set', key);
+            val = newVal
+            // 视图更新
+            update();
+          }
+        }
+      })
+    }
+
+    const obj = {}
+    defineReactive(obj, 'foo', 'foo')
+    const app = document.getElementById('app')
+
+    function update(params) {
+      app.innerHTML = obj.foo;
+    }
+    setInterval(() => {
+      obj.foo = new Date().toLocaleTimeString()
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
